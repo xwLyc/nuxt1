@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
+const _6e63474d = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+
 Vue.use(Router)
 
 if (process.client) {
@@ -62,7 +64,11 @@ export function createRouter() {
     linkExactActiveClass: 'nuxt-link-exact-active',
     scrollBehavior,
 
-    routes: [],
+    routes: [{
+      path: "/",
+      component: _6e63474d,
+      name: "index"
+    }],
 
     fallback: false
   })
